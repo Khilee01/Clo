@@ -1,0 +1,91 @@
+.products-page {
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+
+.categorySelector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-style: solid;
+    border-color: #848D62;
+    border-right: 1%;
+    border-top: 0px;
+    border-bottom: 0px;
+    border-left: 0px;
+}
+
+.products-container {
+    display: flex;
+    width: 77vw;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: auto;
+}
+
+.ItemBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    height: 17vw;
+    width: 17vw;
+    border-radius: 20px;
+    border-style: solid;
+    border-width: 0.25vw;
+    margin: 1%;
+    transition: all 0.3s;
+}
+
+.ItemBox:hover {
+    cursor: pointer;
+    scale: 105%;
+}
+
+.ItemBox img {
+    height: 20vh;
+    width: 10vw;
+    align-self: center;
+    margin-top: 5%;
+}
+
+.ItemBox a {
+    margin-left: 5%;
+    text-decoration: none;
+    color: #444b2c;
+}
+
+.itemBoxSubDiv {
+    display: flex;
+    flex-direction: row;
+    font-size: 120%;
+    justify-content: space-evenly;
+}
+
+.itemBoxSubDiv button {
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: inset 0 3px 6px rgba(0,0,0,0.16), 0 4px 6px rgba(0,0,0,0.45);
+    border: #848D62;
+    background-color: #FAF2E9;
+    color: #848D62;
+    transition: all ease-in-out 0.3s;
+}
+
+.itemBoxSubDiv button:hover {
+    background-color: #848D62;
+    color: #FAF2E9;
+}
+
+#categoryAndSearchForm {
+    display: flex;
+    flex-direction: column;
+}
+
+#searchBox {
+    margin-top: 15%;
+    width: 20vw;
+    background-color: #FAF2E9;
+    color: #848D62;
+    border-style: solid;
+    border-radius: 0.6dvw;
+}

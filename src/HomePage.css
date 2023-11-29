@@ -1,0 +1,36 @@
+.homepg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.homepg img:hover {
+    cursor: pointer;
+}
+
+.homepgCategoryCards {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+}
+
+.homepgCategoryCards #brandsCategory {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    gap: 5%;
+    margin-top: 10%;
+}
+
+#categoryCards {
+    transition: all;
+    transition-duration: 0.5s;
+}
+
+#categoryCards:hover {
+    scale: 1.1;
+}

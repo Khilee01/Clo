@@ -29,13 +29,33 @@ function CheckoutButton() {
     </button>
   )
 }
+function RowDetails({ item }) {
+  const { cart, setCart } = useContext(cartContext);
 
-function RowDetails({item}) {
+  function handleChange(event) {
+    const newQuantity = parseInt(event.target.value);
+    ChangeCartQuantity(newQuantity);
+  }
+
+  async function ChangeCartQuantity(newQuantity) {
+    // Find the corresponding cart item and update its quantity
+    if(newQuantity === '') {
+      newQuantity = 0
+    }
+    const updatedCart = [...cart];
+    const cartItemIndex = updatedCart.findIndex((cartItem) => cartItem.id === item.id);
+
+    if (cartItemIndex !== -1) {
+      updatedCart[cartItemIndex].quantity = newQuantity;
+      setCart(updatedCart);
+    }
+  }
+
   return (
-    <div id='rowDetails'>
-      <p>{item.name} <br />₹{item.price} x {item.quantity}</p>
+    <div id="rowDetails">
+      <p>{item.name} <br />₹{item.price} x <input id={`quantityHandle_${item.id}`} type="number" value={item.quantity} onChange={handleChange} min={1} max={10} /></p>
     </div>
-  )
+  );
 }
 
 function calculateTotalCost(allItems) {

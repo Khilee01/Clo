@@ -12,11 +12,6 @@
 #checkOutFromCart {
     display: flex;
     justify-content: center;
-    border-top: 0px;
-    width: 20dvw;
-    border-right: 0px;
-    border-bottom: 0px;
-    border-style: solid;
 }
 
 #cartItemBox {
@@ -44,4 +39,16 @@
 
 #subDivCheckoutFromCart {
     margin: 2vw;
+}
+
+#cartIsEmpty {
+    align-self: center;
+    justify-self: center;
+}
+
+#checkoutButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
 }

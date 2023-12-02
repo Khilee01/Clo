@@ -3,6 +3,8 @@ import { cartContext } from './App';
 import products from './test/items.json';
 import { useContext, useEffect, useState } from 'react';
 import { ItemBox } from './Products';
+import './ProductDetails.css';
+
 
 function RetrieveCart() {
   const [items, setItems] = useState([]); // Initialize items as an empty array
@@ -14,6 +16,18 @@ function RetrieveCart() {
   }, [cart]); // Re-run useEffect whenever cart changes
 
   return items;
+}
+
+function CheckoutButton() {
+  return (
+    <button className='addToCartButton' id='checkoutButton'>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,200,0,0" />
+      Checkout
+      <span className="material-symbols-outlined">
+      shopping_cart_checkout
+      </span>
+    </button>
+  )
 }
 
 function RowDetails({item}) {
@@ -57,25 +71,22 @@ export default function UserCart() {
   
 
   return (
-    <div className="userCartContainer">
-      <div id="productsAddedToCart">
-        {items.length > 0 ? (
-          // Check if items is not empty before mapping
-          itemDetails.map((item) => <ItemBox key={item.id} item={item} />)
-        ) : (
-          <h1 id='addSomeItemsMessage'>No items in cart</h1>
-        )}
+    items.length > 0 ? (
+      <div className='userCartContainer'>
+        <div id='productsAddedToCart'>
+        {itemDetails.map((item) => <ItemBox key={item.id} item={item} />)}
+        </div>
+        <div id='checkoutFromCart'>
+        <h1>Total Cost</h1>
+           {itemDetails.map((item) => <RowDetails key={item.id} item={item} />)}  
+           <h4>Total: ₹{calculateTotalCost(itemDetails)}</h4>
+           <CheckoutButton />
+        </div>
       </div>
-      <div id="checkOutFromCart">
-        {items.length > 0 ? (
-          <div id='subDivCheckoutFromCart'>
-          <h1>Total Cost</h1>
-          {itemDetails.map((item) => <RowDetails key={item.id} item={item} />)}  
-          <h4>Total: ₹{calculateTotalCost(itemDetails)}</h4>
-          </div>
-        )
-        : (<h3 id='addSomeItemsMessage'>Add some items to your cart</h3>)}
+    ) : (
+      <div id='cartIsEmpty'>
+        Oops, Seems like you haven't added anything to the cart yet!
       </div>
-    </div>
+    )
   );
 }

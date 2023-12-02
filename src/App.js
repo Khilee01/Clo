@@ -8,6 +8,7 @@ import ProductDetails from './ProductDetails';
 import Products from './Products';
 import SupportPage from './SupportPage';
 import UserCart from './UserCart';
+import ErrorDisplay from './ErrorDisplay';
 /* 
 REMEMBER!
 ALL ROUTES ARE STORED IN THIS FILE I.E. APP.JS
@@ -16,9 +17,17 @@ WHEREAS LINKS CAN BE ANYWHERE!
 AND DO NOT FORGET TO THINK IN A HIERARCHICAL MANNER IN REACT
 */
 
+function Footer() {
+  return (
+    <footer>
+      All rights reserved
+    </footer>
+  )
+}
+
 function Heading() {
   return (
-    <header className="App_Header">
+    <div className="App_Header">
       <CloBrand />
       <nav className="App_Header_Navbar">
         <Link to="/">Home</Link>
@@ -27,7 +36,7 @@ function Heading() {
         <Link to="/support">Support</Link>
         <Link to="/userCart">Cart</Link>
       </nav>
-    </header>
+    </div>
   );
 }
 
@@ -48,6 +57,7 @@ export default function App() {
         <Route path='/products/:id' element={<ProductDetails />} />
         <Route path='/userCart' element={<UserCart />} />
         <Route path='/support' element={<SupportPage />} />
+        <Route path={`/*`} element={<ErrorDisplay />} />
       </Routes>
     </div>
     </cartContext.Provider>

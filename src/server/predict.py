@@ -4,7 +4,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 
 app = Flask(__name__)
-cors = CORS(app, resources={r"/*": {"origins": "*"}})
+cors = CORS(app, resources={r"/predict": {"origins": ["*"]}})
 
 def predict_colors(favorite_color, skin_tone, interest_style):
     # Load the trained models
@@ -48,7 +48,8 @@ def receive_data():
     }
 
     # Return the response in JSON format
-    return jsonify(response_data)
+    response = jsonify(response_data)
+    response.headers['Access-Control-Allow-Origin'] = '*'
 
 if __name__ == "__main__":
     app.run(host="localhost", port=5000, debug=True)

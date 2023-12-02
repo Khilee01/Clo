@@ -1,0 +1,15 @@
+#ErrorOccured {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#ErrorNumber {
+    font-weight: 700;
+    font-size: 100px;
+}
+
+#ErrorMessage {
+    color: rgb(125, 125, 125);
+}

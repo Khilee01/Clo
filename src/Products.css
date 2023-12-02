@@ -4,15 +4,16 @@
 }
 
 .categorySelector {
+    padding-top: 10%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    border-style: solid;
-    border-color: #848D62;
-    border-right: 1%;
+    justify-content: space-between;
+    border-right: 2px;
     border-top: 0px;
     border-bottom: 0px;
     border-left: 0px;
+    border-style: solid;
+    border-color: rgb(239, 239, 239);
 }
 
 .products-container {
@@ -27,13 +28,12 @@
     display: flex;
     flex-direction: column;
     justify-content: baseline;
-    height: 17vw;
+    border-radius: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    height: 22vw;
     width: 17vw;
-    border-radius: 20px;
-    border-style: solid;
-    border-width: 0.25vw;
     margin: 1%;
-    transition: all 0.3s;
+    transition: all 275ms;
 }
 
 .ItemBox:hover {
@@ -42,8 +42,9 @@
 }
 
 .ItemBox img {
-    height: 20vh;
-    width: 10vw;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    max-width: 25dvw;
+    max-height: 25dvh;
     align-self: center;
     margin-top: 5%;
 }
@@ -51,7 +52,7 @@
 .ItemBox a {
     margin-left: 5%;
     text-decoration: none;
-    color: #444b2c;
+    color: black;
 }
 
 .itemBoxSubDiv {
@@ -64,10 +65,7 @@
 .itemBoxSubDiv button {
     cursor: pointer;
     border-radius: 5px;
-    box-shadow: inset 0 3px 6px rgba(0,0,0,0.16), 0 4px 6px rgba(0,0,0,0.45);
-    border: #848D62;
-    background-color: #FAF2E9;
-    color: #848D62;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     transition: all ease-in-out 0.3s;
 }
 
@@ -79,13 +77,34 @@
 #categoryAndSearchForm {
     display: flex;
     flex-direction: column;
+    border-bottom: solid;
+    border-color: grey;
+    padding-left: 10%;
+    border-width: 1px;
 }
 
 #searchBox {
     margin-top: 15%;
     width: 20vw;
-    background-color: #FAF2E9;
-    color: #848D62;
     border-style: solid;
     border-radius: 0.6dvw;
+}
+
+.categoryRadioButtons {
+    display: flex;
+    flex-direction: column;
+}
+
+.radioButtons:checked {
+    background-color: #007bff;
+    border: none;
+}
+
+.radioButtons:checked {
+    background: black;
+}
+
+.radioButtons:hover {
+    background-color: green;
+    cursor: pointer;
 }

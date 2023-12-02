@@ -12,6 +12,7 @@ const headers = {
 //app.use(cors)
 // Define a route to fetch products
 app.get('/products', (req, res) => {
+  console.log(data)
   const searchTerm = req.query.searchTerm || '';
   const selectedCategory = req.query.selectedCategory || '';
   const productId = parseInt(req.query.id) || null;
@@ -26,6 +27,10 @@ app.get('/products', (req, res) => {
 
   res.json(filteredProducts);
 });
+
+app.get('/', () => {
+  console.log(data)
+})
 
 // Start the server
 const port = process.env.PORT || 3000;

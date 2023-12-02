@@ -8,17 +8,21 @@
     justify-content: center;
     align-items: center;
     border-style: solid;
+    border-color: rgb(218, 218, 218);
     border-top: 0px;
     border-bottom: 0px;
     border-left: 0px;
-    border-right: 1%;
+    border-width: 1px;
 }
 
 #productImgContainer img {
-    border: 1%;
-    border-style: solid;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     height: 80%;
     width: 70%;
+    transition: scale 300ms;
+}
+#productImgContainer img:hover {
+    scale: 100.5%;
 }
 
 #mainProductDetails {
@@ -28,9 +32,19 @@
     align-items: flex-start;
 }
 
-#sellerDetails p{
-    padding-top: 10px;
-    font-size: small;
+#sellerDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#sellerDetails h2 {
+    transition: all 300ms;
+}
+
+#sellerDetails h2:hover{
+    cursor: pointer;
+    color: rgb(46, 46, 46);
 }
 
 #ratingContainer {
@@ -40,30 +54,73 @@
 
 #totalRatingContainer {
     border-style: solid;
+    border-width: 0.1dvw;
+    height: 4dvh;
+    padding: 0.2dvw;
+    border-color: grey;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#addToCartButton {
-    border-radius: 10px;
-    background-color: #FAF2E9;
-    color: #848D62;
-    border-style: solid;
-    border-color: #848D62;
-    transition: all 300ms;
-    width: 20%;
+.addToCartButton {
+    margin-top: 90px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    height: 10%;
+    font-size: large;
+    border-radius: 3px;
+    background-color: #ff527b;
+    color: white;
+    border: none;
+    transition: all 250ms;
+    width: 15%;
 }
 
-#addToCartButton:hover {
-    box-shadow: inset 0 3px 6px rgba(0,0,0,0.16), 0 4px 6px rgba(0,0,0,0.45);
+.addToCartButton:hover {
     cursor: pointer;
-    background-color: #848D62;
-    color: #FAF2E9;
-    border-style: solid;
-    border-color: #848D62;
+    scale: 102%;
 }
 
-#addToCartButton:active {
-    scale: 97%;
+.addToCartButton:active {
+    scale: 99.5%;
+}
+
+#randomDetails {
+    margin-top: 50px;
+}
+
+#innerRating {
+    border: 0px;
+    border-right: 0.2dvw solid rgb(125, 125, 125);
+    border-style: solid;
+}
+
+#discountSpan {
+    font-size: 3dvh;
+    font-weight: 700;
+    color: orange;
+}
+
+#mrpSpan {
+    color: grey;
+    font-size: large;
+}
+
+#productPriceSpan {
+    font-weight: 700;
+    font-size: large;
+}
+
+#inclusiveTaxesSpan {
+    color: forestgreen;
+    font-weight: 600;
+}
+
+#randomDetails {
+    color: rgb(125, 125, 125);
+}
+
+#sellerSpan {
+    font-size: small;
+    color: rgb(125, 125, 125);
 }

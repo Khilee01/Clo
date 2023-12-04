@@ -4,6 +4,8 @@ import products from './test/items.json';
 import { useContext, useEffect, useState } from 'react';
 import { ItemBox } from './Products';
 import './ProductDetails.css';
+import DummyCheckout from './DummyCheckout';
+import { Link } from 'react-router-dom';
 
 
 function RetrieveCart() {
@@ -18,15 +20,19 @@ function RetrieveCart() {
   return items;
 }
 
-function CheckoutButton() {
+function CheckoutButton(props) {
   return (
+    <>      
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,200,0,0" />
+    <Link to={`/checkout`}>
     <button className='addToCartButton' id='checkoutButton'>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,200,0,0" />
       Checkout
       <span className="material-symbols-outlined">
       shopping_cart_checkout
       </span>
     </button>
+    </Link>
+    </>
   )
 }
 function RowDetails({ item }) {
@@ -53,7 +59,7 @@ function RowDetails({ item }) {
 
   return (
     <div id="rowDetails">
-      <p>{item.name} <br />₹{item.price} x <input id={`quantityHandle_${item.id}`} type="number" value={item.quantity} onChange={handleChange} min={1} max={10} /></p>
+      <p>{item.name} <br />₹{item.price}&nbsp;x&nbsp;<input id={`quantityHandle_${item.id}`} type="number" value={item.quantity} onChange={handleChange} min={1} max={10} /></p>
     </div>
   );
 }
@@ -86,9 +92,7 @@ export default function UserCart() {
 
     setItemDetails(newMatchingProducts); // Update matchingProducts with the new array
   }, [items]); // Re-run useEffect whenever items changes
-  console.log(itemDetails)
-
-  
+  const total = calculateTotalCost(itemDetails)
 
   return (
     items.length > 0 ? (
@@ -99,8 +103,8 @@ export default function UserCart() {
         <div id='checkoutFromCart'>
         <h1>Total Cost</h1>
            {itemDetails.map((item) => <RowDetails key={item.id} item={item} />)}  
-           <h4>Total: ₹{calculateTotalCost(itemDetails)}</h4>
-           <CheckoutButton />
+           <h4>Total: ₹{total}</h4>
+           <CheckoutButton finalPrice={total} />
         </div>
       </div>
     ) : (

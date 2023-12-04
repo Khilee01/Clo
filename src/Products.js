@@ -9,11 +9,14 @@ export function ItemBox({ item }) {
     <div className="ItemBox">
       <img src={item.img} alt="product" />
       <Link to={`/products/${item.id}`}>
-        <h3>{item.name}</h3>
+        <span id='itemNameSpan'>{item.name}</span>
       </Link>
       <div className="itemBoxSubDiv">
+        <div id='priceAndMrpDiv'>
         <span>₹{item.price}</span>
-        <span>★{item.rating}</span>
+        <span id='mrpStrikeThroughSpan'>₹<s>{item.mrp}</s></span>
+        </div>
+        <span id='discountSpanProducts'>({item.discount}% off)</span>
       </div>
     </div>
   );
@@ -50,14 +53,6 @@ function Products(props) {
     setProducts(filteredProducts);
   };
 
-  // const handleCategoryChange = (event) => {
-  //   const selectedCategory = event.target.value;
-  //   setSelectedCategory(selectedCategory);
-  //   console.log(selectedCategory)
-  //   // Filter products on category change
-  //   const filteredProducts = selectedCategory === '' ? products : products.filter((item) => item.gender == selectedCategory);
-  //   setProducts(filteredProducts);
-  // };
   const handleCategoryChange = (event) => {
     const newSelectedCategory = event.target.value;
     const selectedCategory = newSelectedCategory === 'all' ? '' : newSelectedCategory;
@@ -79,9 +74,16 @@ function Products(props) {
 
   return (
     <div className="products-page">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
       <div className="categorySelector">
         <form id="categoryAndSearchForm">
-          <label>Category</label>
+          <div class="search">
+          <span class="material-symbols-outlined">
+            search
+          </span>
+            <input onInput={handleSearchChange} type="text" class="searchTerm" placeholder="What are you looking for?"/>
+          </div>
+          <span id='plainCategoryText'>Category</span>
           <div className="categoryRadioButtons">
             <div className='labelRadioGroup'>
               <input
@@ -91,7 +93,7 @@ function Products(props) {
                 value="Men"
                 checked={selectedCategory === 'Men'} // Check if the selected category is 'Men'
                 onChange={handleCategoryChange}
-              />
+              ></input>
               <label htmlFor="Men">Men</label>
               </div>
               <div className='labelRadioGroup'>
@@ -116,28 +118,6 @@ function Products(props) {
               />
               <label htmlFor="Unisex">Unisex</label>
               </div>
-              <div className='labelRadioGroup'>
-              <input
-                type="radio"
-                name="category"
-                className='radioButtons'
-                value="Boy"
-                checked={selectedCategory === 'Boy'} // Check if the selected category is 'Unisex'
-                onChange={handleCategoryChange}
-              />
-              <label htmlFor="Boy">Boy</label>
-              </div>
-              <div className='labelRadioGroup'>
-              <input
-                type="radio"
-                name="category"
-                className='radioButtons'
-                value="Girl"
-                checked={selectedCategory === 'Girl'} // Check if the selected category is 'Unisex'
-                onChange={handleCategoryChange}
-              />
-              <label htmlFor="Girl">Girl</label>
-            </div>
           </div>
         </form>
       </div>

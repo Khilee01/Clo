@@ -9,10 +9,8 @@ app.use(cors());
 const headers = {
   "Content-Type": "application/json",
 }
-//app.use(cors)
 // Define a route to fetch products
 app.get('/products', (req, res) => {
-  console.log(data)
   const searchTerm = req.query.searchTerm || '';
   const selectedCategory = req.query.selectedCategory || '';
   const productId = parseInt(req.query.id) || null;

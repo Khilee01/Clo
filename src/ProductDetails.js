@@ -40,7 +40,7 @@ function ProductDetails() {
 
         <div id="mainProductDetails">
           <div id="sellerDetails">
-            <h2>{product.name} <br /></h2><span id='sellerSpan'> by ({product.seller})</span>
+            <h2>{product.name} <br /></h2><span id='sellerSpan'> by {product.seller}</span>
 
             <div id="ratingContainer">
             <div id="totalRatingContainer"><span id='innerRating'>Rating: {parseFloat(product.rating).toFixed(2)}★&nbsp;</span><br />
@@ -50,7 +50,7 @@ function ProductDetails() {
 
           <div id="productDetails">
             <div>
-            <span id='productPriceSpan'>₹{product.price}&nbsp;&nbsp;&nbsp;</span><span id='mrpSpan'>MRP <s>₹{product.mrp}</s></span><br /><span id='discountSpan'>{product.discount}% OFF!</span>
+            <span id='productPriceSpan'>₹ {product.price}&nbsp;&nbsp;&nbsp;</span><span id='mrpSpan'>MRP <s>₹ {product.mrp}</s></span><br /><span id='discountSpan'>{product.discount}% OFF!</span>
             <br />
             <span id='inclusiveTaxesSpan'>Inclusive of all taxes</span>
             </div>
@@ -64,7 +64,7 @@ function ProductDetails() {
             Try & Buy might be available depending on the product
           </div>
 
-          <button className="addToCartButton" onClick={() => addTheItemToCartContext(product.id)}>
+          <button className="addToCartButton" id='addItem' onClick={() => addTheItemToCartContext(product.id)}>
             Add to Cart
           </button>
         </div>

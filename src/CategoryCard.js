@@ -22,7 +22,7 @@ export default function CategoryCard(props) {
     }
 
     const style_gender_m = {
-        height: "45vh",
+        height: "47vh",
         width: '16vw',
         margin: '10px',
         "boxShadow": "2px 2px 4px rgba(0, 0, 0, 0.4)",

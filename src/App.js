@@ -9,6 +9,7 @@ import Products from './Products';
 import SupportPage from './SupportPage';
 import UserCart from './UserCart';
 import ErrorDisplay from './ErrorDisplay';
+import DummyCheckout from './DummyCheckout';
 /* 
 REMEMBER!
 ALL ROUTES ARE STORED IN THIS FILE I.E. APP.JS
@@ -16,14 +17,6 @@ WHEREAS LINKS CAN BE ANYWHERE!
 
 AND DO NOT FORGET TO THINK IN A HIERARCHICAL MANNER IN REACT
 */
-
-function Footer() {
-  return (
-    <footer>
-      All rights reserved
-    </footer>
-  )
-}
 
 function Heading() {
   return (
@@ -57,6 +50,7 @@ export default function App() {
         <Route path='/products/:id' element={<ProductDetails />} />
         <Route path='/userCart' element={<UserCart />} />
         <Route path='/support' element={<SupportPage />} />
+        <Route path={`/checkout`} element={<DummyCheckout />} />
         <Route path={`/*`} element={<ErrorDisplay />} />
       </Routes>
     </div>

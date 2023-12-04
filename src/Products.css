@@ -25,8 +25,9 @@
 }
 
 .ItemBox {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: 60%;
+    align-items: center;
     justify-content: baseline;
     border-radius: 10px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -45,7 +46,7 @@
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     max-width: 25dvw;
     max-height: 25dvh;
-    align-self: center;
+    margin-left: 25%;
     margin-top: 5%;
 }
 
@@ -58,7 +59,7 @@
 .itemBoxSubDiv {
     display: flex;
     flex-direction: row;
-    font-size: 120%;
+    font-size: 90%;
     justify-content: space-evenly;
 }
 
@@ -76,23 +77,23 @@
 
 #categoryAndSearchForm {
     display: flex;
+    padding-top: 5%;
     flex-direction: column;
     border-bottom: solid;
-    border-color: grey;
-    padding-left: 10%;
+    border-color: rgba(99, 99, 99, 0.2);
     border-width: 1px;
-}
-
-#searchBox {
-    margin-top: 15%;
-    width: 20vw;
-    border-style: solid;
-    border-radius: 0.6dvw;
 }
 
 .categoryRadioButtons {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    padding-top: 5%;padding-bottom: 5%;
+    padding-left: 10%;padding-right: 10%;
+}
+
+label {
+    color: #383428;
 }
 
 .radioButtons:checked {
@@ -107,4 +108,54 @@
 .radioButtons:hover {
     background-color: green;
     cursor: pointer;
+}
+
+#plainCategoryText {
+    border-bottom: solid;
+    padding: 2%;
+    width: 95%;
+    color: #383428;
+    border-color: rgba(99, 99, 99, 0.2);
+}
+
+
+/* Search box goes here */
+.search {
+    display: flex;
+    flex-direction: row;
+}
+.searchTerm {
+    color: grey;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    width: 200px;
+    transition: all 250ms;
+}
+
+.searchTerm:focus {
+  /* Active search box styles */
+  background-color: #eee;
+  color: black;
+  border: 1px solid #007bff;
+  width: 220px;
+}
+
+#discountSpanProducts {
+    color: orange;
+}
+
+#mrpStrikeThroughSpan {
+    color: grey;
+    margin-left: 10px;
+}
+
+#priceAndMrpDiv {
+    display: flex;
+    justify-content: space-between;
+}
+
+#itemNameSpan {
+    font-weight: 700;
+    font-size: relative;
 }

@@ -1,0 +1,59 @@
+.DummyCheckoutContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(242, 242, 242);
+
+}
+
+.CheckoutSubContainer {
+    display: flex;
+    margin-bottom: 7%;
+    flex-direction: row;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    height: 90dvh;
+    width: 30dvw;
+    visibility: visible;
+    flex-wrap: wrap;
+}
+
+#dummyHeaderSpan {
+    align-self: flex-start;
+    background-color: blue;
+    height: 15dvh;
+    width: 50dvw;
+}
+
+.detailsFill {
+    display: flex;
+    flex-direction: column;
+    margin: 3%;
+}
+
+.detailsFill span {
+    color: rgb(125, 125, 125);
+}
+
+.detailsFill input:empty {
+    color: grey;
+}
+
+.detailsFill input {
+    transition: all 200ms;
+}
+
+.detailsFill input[type="password"] {
+    width: 30%;
+}
+
+.detailsFill input:focus {
+    transform: scaleX(1.05);
+    color: black;
+    background-color: rgb(238, 235, 235);
+    border: 2px blue;
+}
+
+#fillerDiv {
+    width: 30dvw;
+}

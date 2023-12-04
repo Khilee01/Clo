@@ -6,10 +6,10 @@ function Clothetic() {
     // Define the lists of options for each category
     let output
     const [favColorList] = useState([
-        'Red', 'Blue', 'Green', 'Yellow', 'Orange', 'Purple', 'Pink', 'Brown', 'Gray', 'Black', 'White', 'Rose', 'Navy Blue', 'Mint Green', 'Mustard Yellow', 'Crimson Red', 'Peach Pink', 'Chocolate Brown', 'Charcoal Gray', 'Ivory White', 'Ebony Black',
+        'Red', 'Green', 'Blue', 'Orange', 'Black', 'White'
     ]);
-    const [skinToneList] = useState(['Darker Skin Tone', 'Fair Skin Tone', 'Light Skin Tone', 'Lighter Skin Tone', 'Medium Skin Tone', 'Olive Skin Tone', 'Tanned Skin Tone', 'In-Between Skin Tone']);
-    const [interestStyleList] = useState(['Mix and Match', 'Darker Clothes', 'Lighter Clothes','Elegant', 'Casual', 'Bohemian', 'Modern', 'Edgy', 'Romantic', 'Classic', 'Minimalist', 'Preppy', 'Avant-Garde']);
+    const [skinToneList] = useState(['Fair Skin Tone', 'Light Skin Tone', 'Lighter Skin Tone', 'Medium Skin Tone', 'Tanned Skin Tone']);
+    const [interestStyleList] = useState(['Mix and Match', 'Darker Clothes', 'Lighter Clothes', 'Elegant', 'Casual', 'Modern', 'Edgy', 'Romantic', 'Classic', 'Minimalist']);
 
     // Define state variables to control the visibility of each options list
     const [showColorOptions, setShowColorOptions] = useState(true);

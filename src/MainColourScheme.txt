@@ -1,4 +1,2 @@
-The main colour hex codes are:
-
-background-color: #FAF2E9;
-color: #848D62;
+bg: offwhite
+colour: grey

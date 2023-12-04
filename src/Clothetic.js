@@ -8,8 +8,8 @@ function Clothetic() {
     const [favColorList] = useState([
         'Red', 'Green', 'Blue', 'Orange', 'Black', 'White'
     ]);
-    const [skinToneList] = useState(['Fair Skin Tone', 'Light Skin Tone', 'Lighter Skin Tone', 'Medium Skin Tone', 'Tanned Skin Tone']);
-    const [interestStyleList] = useState(['Mix and Match', 'Darker Clothes', 'Lighter Clothes', 'Elegant', 'Casual', 'Modern', 'Edgy', 'Romantic', 'Classic', 'Minimalist']);
+    const [skinToneList] = useState(['Dark Skin Tone', 'Light Skin Tone', 'Brown Skin Tone']);
+    const [interestStyleList] = useState(['Minimalist', 'Modern', 'Casual']);
 
     // Define state variables to control the visibility of each options list
     const [showColorOptions, setShowColorOptions] = useState(true);
@@ -117,8 +117,9 @@ function Clothetic() {
                             </ul>
                         </>
                     }
-
-                        <>
+                    {
+                        primaryColor ? (
+                            <>
                         <p className="msg-to-chatbot-container">
                             The primary Color suggestion would be {primaryColor}
                         </p>
@@ -126,6 +127,10 @@ function Clothetic() {
                             The secondary Color suggestion would be {secondaryColor}.
                         </p>
                         </>
+                        ) : (
+                            <></>
+                        )
+                    }
                 </div>
             </div>
             <div className="user">

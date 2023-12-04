@@ -6,7 +6,7 @@ import { ItemBox } from './Products';
 import './ProductDetails.css';
 import DummyCheckout from './DummyCheckout';
 import { Link } from 'react-router-dom';
-
+var total = 0
 
 function RetrieveCart() {
   const [items, setItems] = useState([]); // Initialize items as an empty array
@@ -92,7 +92,7 @@ export default function UserCart() {
 
     setItemDetails(newMatchingProducts); // Update matchingProducts with the new array
   }, [items]); // Re-run useEffect whenever items changes
-  const total = calculateTotalCost(itemDetails)
+  total = calculateTotalCost(itemDetails)
 
   return (
     items.length > 0 ? (
@@ -114,3 +114,5 @@ export default function UserCart() {
     )
   );
 }
+
+export var total

@@ -18,11 +18,15 @@
     flex-wrap: wrap;
 }
 
-#dummyHeaderSpan {
+#orderSummary {
+    display: flex;
+    flex-direction: column;
     align-self: flex-start;
-    background-color: blue;
+    color: whitesmoke;
+    background-color: navy;
     height: 15dvh;
     width: 50dvw;
+    padding: 5%;
 }
 
 .detailsFill {
@@ -40,7 +44,10 @@
 }
 
 .detailsFill input {
+    padding: 2%;
     transition: all 200ms;
+    border-radius: 20px;
+    border: 1px solid;
 }
 
 .detailsFill input[type="password"] {

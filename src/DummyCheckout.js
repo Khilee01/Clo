@@ -1,6 +1,7 @@
 import React from 'react';
 import './DummyCheckout.css'
 import { useEffect } from 'react';
+import { total } from './UserCart';
 
 export default function DummyCheckout() {
     useEffect(() => {
@@ -15,7 +16,10 @@ export default function DummyCheckout() {
   return (
     <div className="DummyCheckoutContainer">
         <div className='CheckoutSubContainer'>
-            <div id='dummyHeaderSpan'></div>
+            <div id='orderSummary'>
+              <h2>Order Summary</h2>
+              Total: ₹{total}
+              </div>
             <div className='detailsFill'>
             <span>First Name</span>
             <input type='text' placeholder='John'></input>

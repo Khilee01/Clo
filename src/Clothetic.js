@@ -8,7 +8,7 @@ function Clothetic() {
     const [favColorList] = useState([
         'Red', 'Green', 'Blue', 'Orange', 'Black', 'White'
     ]);
-    const [skinToneList] = useState(['Dark Skin Tone', 'Light Skin Tone', 'Brown Skin Tone']);
+    const [skinToneList] = useState(['Dark Skin Tone', 'Light Skin Tone', 'Tanned Skin Tone']);
     const [interestStyleList] = useState(['Minimalist', 'Modern', 'Casual']);
 
     // Define state variables to control the visibility of each options list
@@ -29,6 +29,18 @@ function Clothetic() {
     // Use the useEffect hook to log the selected options whenever they change
     useEffect(() => {
         console.log(selectedOptions);
+        // Will send the request iff all options are set
+        if (selectedOptions.favColor && selectedOptions.skinTone && selectedOptions.interestStyle) {
+            axios.post('http://localhost:5000/predict', selectedOptions)
+            .then(response =>{
+                console.log(response.data);
+                output = response.data;
+                setPrimaryColor(output.primary_color)
+                setSecondaryColor(output.secondary_color)
+            }
+            )
+            .catch(error => console.log(error))
+        }
 
     }, [selectedOptions]);
 
@@ -48,27 +60,6 @@ function Clothetic() {
     const handleInterestStyleClick = (style) => {
         setSelectedOptions(prevState => ({ ...prevState, interestStyle: style }));  // Store the selected interest style
         setShowInterestStyleOptions(false);
-
-
-        const requestOptions = {
-            method: 'POST',
-            url: 'http://localhost:5000/predict', // Replace with your server URL
-            headers: {
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*'
-            },
-            data: {...selectedOptions}
-        }
-        
-        axios(requestOptions)
-        .then(response =>{
-            console.log(response.data);
-            output = response.data;
-            setPrimaryColor(output.primary_color)
-            setSecondaryColor(output.secondary_color)
-        }
-        )
-        .catch(error => console.log(error))
     }
  
     // Render the component

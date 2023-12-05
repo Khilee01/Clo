@@ -3,13 +3,13 @@ import { Link, Route, Routes } from 'react-router-dom';
 import './App.css';
 import CloBrand from './CloBrand';
 import Clothetic from './Clothetic';
+import DummyCheckout from './DummyCheckout';
+import ErrorDisplay from './ErrorDisplay';
 import HomePage from './HomePage';
 import ProductDetails from './ProductDetails';
 import Products from './Products';
 import SupportPage from './SupportPage';
 import UserCart from './UserCart';
-import ErrorDisplay from './ErrorDisplay';
-import DummyCheckout from './DummyCheckout';
 /* 
 REMEMBER!
 ALL ROUTES ARE STORED IN THIS FILE I.E. APP.JS
@@ -38,11 +38,11 @@ export const cartContext = createContext()
 
 export default function App() {
   const [cart, setCart] = useState([])
-
+  
   return (
     <cartContext.Provider value={{cart, setCart}}>
     <div className="App">
-      <Heading />      
+      <Heading />           {/* returns a div containing the application’s header */}      
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path="/products" element={<Products />} />

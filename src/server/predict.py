@@ -19,7 +19,7 @@ def calculate_cosine_similarity_and_index(user_input):
 
     max_similarity_index = np.argmax(cosine_similarities)
 
-    return dataset[max_similarity_index, 7:10], dataset[max_similarity_index, 10:]
+    return dataset[max_similarity_index, 7:10], dataset[max_similarity_index, 10:]    #hence returning the primary and secondary
 
 def compare_to_colors(unit):
     if unit.tolist() == [255, 255, 255]:

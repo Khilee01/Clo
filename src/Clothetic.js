@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import './Clothetic.css';
 
 function Clothetic() {
-    // Define the lists of options for each category
+    //the lists of options for each category
     let output
     const [favColorList] = useState([
         'Red', 'Green', 'Blue', 'Orange', 'Black', 'White'
@@ -11,8 +11,8 @@ function Clothetic() {
     const [skinToneList] = useState(['Dark Skin Tone', 'Light Skin Tone', 'Tanned Skin Tone']);
     const [interestStyleList] = useState(['Minimalist', 'Modern', 'Casual']);
 
-    // Define state variables to control the visibility of each options list
-    const [showColorOptions, setShowColorOptions] = useState(true);
+    //state variables to control the visibility of each options list
+    const [showColorOptions, setShowColorOptions] = useState(true);//the color options list is initially visible when the component renders.
     const [showSkinToneOptions, setShowSkinToneOptions] = useState(false);
     const [showInterestStyleOptions, setShowInterestStyleOptions] = useState(false);
     const [primaryColor, setPrimaryColor] = useState('')
@@ -72,8 +72,9 @@ function Clothetic() {
                     <p className="msg-to-chatbot-container">
                         Hey Welcome on the journey to discover your best fit!
                     </p>
+                    {/* Fragment in place of parent  */} 
                     {showColorOptions && 
-                        <>
+                        <>                                                       {/* Fragment in place of parent  */}                
                             <p className="msg-to-chatbot-container" id="pickColor">
                                 Pick your Favourite Color
                             </p>
@@ -112,10 +113,11 @@ function Clothetic() {
                         primaryColor ? (
                             <>
                         <p className="msg-to-chatbot-container">
-                            The primary Color suggestion would be {primaryColor}
+                            Elevate your style with the primary color  <span style={{ fontWeight: 600, fontStyle: 'italic' }}>{primaryColor}</span>.
+
                         </p>
                         <p className="msg-to-chatbot-container">
-                            The secondary Color suggestion would be {secondaryColor}.
+                            Complete the look with the secondary color <span style={{ fontWeight: 600, fontStyle: 'italic'}}>{secondaryColor}</span>.
                         </p>
                         </>
                         ) : (
@@ -126,9 +128,6 @@ function Clothetic() {
             </div>
             <div className="user">
                 <img className="image" src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/chatbot-boy-img.png" />
-            </div>
-            <div className="">
-                <input className="user-input" id="userInput" />
             </div>
         </div>
     );

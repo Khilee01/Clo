@@ -23,7 +23,6 @@ export function Heading() {
     <div className="App_Header">
       <CloBrand />
       <nav className="App_Header_Navbar">
-        <Link to="/">Home</Link>
         <Link to="/products">Products</Link>
         <Link to="/clothetic">CloBot</Link>
         <Link to="/support">Support</Link>

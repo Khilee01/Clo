@@ -55,7 +55,6 @@
 }
 
 .detailsFill input:focus {
-    transform: scaleX(1.05);
     color: black;
     background-color: rgb(238, 235, 235);
     border: 2px blue;

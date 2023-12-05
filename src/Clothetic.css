@@ -48,14 +48,14 @@
 
 li{
     list-style-type: none;
-    margin-left:30vw;
+    margin-left:40vw;
     padding:10px;
     background-color:#ff527b;
     border-radius: 20px;
-    width:30vw;
+    width:27vw;
     text-align: center;
     color:white;
-    margin-bottom: 3px;
+    margin-bottom: 0.5vw;
 }
 
 li:hover {

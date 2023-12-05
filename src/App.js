@@ -18,12 +18,11 @@ WHEREAS LINKS CAN BE ANYWHERE!
 AND DO NOT FORGET TO THINK IN A HIERARCHICAL MANNER IN REACT
 */
 
-function Heading() {
+export function Heading() {
   return (
     <div className="App_Header">
       <CloBrand />
       <nav className="App_Header_Navbar">
-        <Link to="/">Home</Link>
         <Link to="/products">Products</Link>
         <Link to="/clothetic">CloBot</Link>
         <Link to="/support">Support</Link>

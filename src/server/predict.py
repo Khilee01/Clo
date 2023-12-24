@@ -96,7 +96,7 @@ def receive_data():
             X.append(3)
 
     print(X)
-    primary, secondary = calculateFinalOutput(np.array(X))
+    primary, secondary =    (np.array(X))
     # Prepare the response data
     response_data = {"primary_color": primary, "secondary_color": secondary}
 
